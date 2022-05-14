@@ -92,8 +92,8 @@
 
     .desktop-icon-container {
         margin: 25px;
-        width: 5vw;
-        height: 5vw;
+        width: 10vh;
+        height: 10vh;
         border-radius: 5px;
         background-color: bisque;
         /*
@@ -108,9 +108,9 @@
 
     .item-text {
         margin-top: 0;
-        /*
-        font-size: 1.8vw;
-        */
+
+        font-size: 1.8vh;
+
         width: 100%;
         text-align: center;
         display: inline;
@@ -124,12 +124,12 @@
     .window {
         z-index: 100;
         position: absolute;
-        bottom: 300px;
+        bottom: 0px;
         left: 300px;
         display: block;
         margin: 0 0;
-        width: 55vw;
-        height: 55vh;
+        width: 70vw;
+        height: 70vh;
         border: 5px solid #000000;
     }
 
@@ -138,13 +138,14 @@
         height: 10%;
         background-color: white;
         border-bottom: 5px solid #000000;
-
+        display: flex;
     }
 
     .topbar .text {
         margin-top: -40px;
         text-align: center;
         font-size: larger;
+
     }
 
     .topbar img {
@@ -174,7 +175,6 @@
     .aboutme-info {
         margin-left: 5%;
         margin-right: 5%;
-        font-size: 1.2vw;
         background-color: rgb(205, 221, 235);
     }
 
@@ -203,66 +203,17 @@
         text-align: left;
     }
 
-    .pixel-border {
-        background: var(--pixel-bg);
-        box-shadow:
+    .window-title {
+        font-size: 3vh;
+        flex: 5%;
+        text-align: left;
+        justify-content: left;
+        margin-left: -15%;
+        margin-top: 1%;
+    }
 
-            /* Inner Background Color */
-            0 calc(var(--pixel) * -3) 0 calc(var(--pixel) * -1) var(--pixel-bg),
-            0 calc(var(--pixel) * 3) 0 calc(var(--pixel) * -1) var(--pixel-bg),
-            0 calc(var(--pixel) * -6) 0 calc(var(--pixel) * -2) var(--pixel-bg),
-            0 calc(var(--pixel) * 6) 0 calc(var(--pixel) * -2) var(--pixel-bg),
-            0 calc(var(--pixel) * -9) 0 calc(var(--pixel) * -4) var(--pixel-bg),
-            0 calc(var(--pixel) * 9) 0 calc(var(--pixel) * -4) var(--pixel-bg),
-            0 calc(var(--pixel) * -12) 0 calc(var(--pixel) * -6) var(--pixel-bg),
-            0 calc(var(--pixel) * 12) 0 calc(var(--pixel) * -6) var(--pixel-bg),
-
-            /* Pixel Border Layer 1 */
-            calc(var(--pixel) * -1) 0 0 0 var(--pixel-border),
-            var(--pixel) 0 0 0 var(--pixel-border),
-            0 calc(var(--pixel) * -2) 0 0 var(--pixel-border),
-            0 calc(var(--pixel) * 2) 0 0 var(--pixel-border),
-            0 calc(var(--pixel) * -5) 0 calc(var(--pixel) * -1) var(--pixel-border),
-            0 calc(var(--pixel) * 5) 0 calc(var(--pixel) * -1) var(--pixel-border),
-            0 calc(var(--pixel) * -7) 0 calc(var(--pixel) * -2) var(--pixel-border),
-            0 calc(var(--pixel) * 7) 0 calc(var(--pixel) * -2) var(--pixel-border),
-            0 calc(var(--pixel) * -10) 0 calc(var(--pixel) * -4) var(--pixel-border),
-            0 calc(var(--pixel) * 10) 0 calc(var(--pixel) * -4) var(--pixel-border),
-            0 calc(var(--pixel) * -13) 0 calc(var(--pixel) * -6) var(--pixel-border),
-            0 calc(var(--pixel) * 13) 0 calc(var(--pixel) * -6) var(--pixel-border),
-
-            /* Pixel Border Layer 2 */
-            calc(var(--pixel) * -2) 0 0 0 var(--pixel-border-2),
-            calc(var(--pixel) * 2) 0 0 0 var(--pixel-border-2),
-            0 calc(var(--pixel) * -1) 0 var(--pixel) var(--pixel-border-2),
-            0 var(--pixel) 0 var(--pixel) var(--pixel-border-2),
-            0 calc(var(--pixel) * -4) 0 0 var(--pixel-border-2),
-            0 calc(var(--pixel) * 4) 0 0 var(--pixel-border-2),
-            0 calc(var(--pixel) * -6) 0 calc(var(--pixel) * -1) var(--pixel-border-2),
-            0 calc(var(--pixel) * 6) 0 calc(var(--pixel) * -1) var(--pixel-border-2),
-            0 calc(var(--pixel) * -8) 0 calc(var(--pixel) * -2) var(--pixel-border-2),
-            0 calc(var(--pixel) * 8) 0 calc(var(--pixel) * -2) var(--pixel-border-2),
-            0 calc(var(--pixel) * -11) 0 calc(var(--pixel) * -4) var(--pixel-border-2),
-            0 calc(var(--pixel) * 11) 0 calc(var(--pixel) * -4) var(--pixel-border-2),
-            0 calc(var(--pixel) * -14) 0 calc(var(--pixel) * -6) var(--pixel-border-2),
-            0 calc(var(--pixel) * 14) 0 calc(var(--pixel) * -6) var(--pixel-border-2),
-
-            /* Border Layer 3: --pixel-border-3 */
-            calc(var(--pixel) * -3) 0 0 0 var(--pixel-border-3),
-            calc(var(--pixel) * 3) 0 0 0 var(--pixel-border-3),
-            0 0 0 calc(var(--pixel) * 2) var(--pixel-border-3),
-            0 calc(var(--pixel) * -3) 0 var(--pixel) var(--pixel-border-3),
-            0 calc(var(--pixel) * 3) 0 var(--pixel) var(--pixel-border-3),
-            0 calc(var(--pixel) * -5) 0 0 var(--pixel-border-3),
-            0 calc(var(--pixel) * 5) 0 0 var(--pixel-border-3),
-            0 calc(var(--pixel) * -7) 0 calc(var(--pixel) * -1) var(--pixel-border-3),
-            0 calc(var(--pixel) * 7) 0 calc(var(--pixel) * -1) var(--pixel-border-3),
-            0 calc(var(--pixel) * -9) 0 calc(var(--pixel) * -2) var(--pixel-border-3),
-            0 calc(var(--pixel) * 9) 0 calc(var(--pixel) * -2) var(--pixel-border-3),
-            0 calc(var(--pixel) * -12) 0 calc(var(--pixel) * -4) var(--pixel-border-3),
-            0 calc(var(--pixel) * 12) 0 calc(var(--pixel) * -4) var(--pixel-border-3),
-            0 calc(var(--pixel) * -15) 0 calc(var(--pixel) * -6) var(--pixel-border-3),
-            0 calc(var(--pixel) * 15) 0 calc(var(--pixel) * -6) var(--pixel-border-3);
+    .cross-title {
+        flex: 5%;
     }
 
     #time {
@@ -409,74 +360,94 @@
 
     </div>
     <div class="window draggable " id="music-window" style="display:none">
-        <div class=topbar>
-            <img src="cross-icon.png" class="music-button">
-            <div class="text">
-                Profile
+        <div style="width: 100; height: 100%;">
+            <div class=topbar>
+                <div class="cross-title">
+                    <img src="cross-icon.png" class="music-button">
+                </div>
+                <div class="window-title">
+                    Profile
+                </div>
             </div>
-        </div>
-        <div>
-            <div class="profile-info-row" style="margin-top: 5%; margin-left: 5%; font-size: 1.5vw;">
-                <div class="profile-info-column">
-                    <div class="profile-name-label profile-label">
-                        Name
-                    </div>
-                    <div class="profile-birthday-label profile-label">
-                        Birthday
-                    </div>
-                    <div class="profile-location-label profile-label">
-                        Location
-                    </div>
-                    <div class="profile-email-label profile-label">
-                        E-mail
-                    </div>
-                    <hr style="background-color: rgb(205, 221, 235);">
-
-
-                </div>
-                <div class="profile-info-column">
-                    <div class="profile-name-info profile-info">
-                        Nathan Pesch
-                    </div>
-                    <div class="profile-birthday-info profile-info">
-                        13/07/2000
-                    </div>
-                    <div class="profile-location-info profile-info">
-                        Lennik, Belgium
-                    </div>
-                    <div class="profile-email-info profile-info">
-                        nathan.pesch@telenet.be
-                    </div>
-                    <hr style="background-color: rgb(205, 221, 235);">
-
-
-                </div>
-                <div class="profile-info-column" style="border-radius: 20%;">
+            <div style="display: flex; flex-direction: column; height: 65%; align-items: stretch;">
+                <div class="profile-info-row"
+                    style="margin-top: 2%; margin-left: 5%; font-size: 1.8vh; display: flex; flex-direction: row; flex-wrap: wrap; gap: 10vw">
                     <img class="logo icon-image" src="profile_icon.png"
-                        style="margin-top: -5%; width: 80%; height: 80%; border-radius: 20%; height:100%; width:auto;  display:flex; justify-content: center; border:5px solid rgb(0, 0, 0);">
+                        style="border-radius: 20%; height:15vh; width:auto;  display:flex; justify-content: center; border:5px solid rgb(0, 0, 0);">
+                    <div style="display:flex; flex-direction: row; flex-grow: 1;">
+                        <div class="profile-info-column"
+                            style="display: flex; flex-direction: column; flex-grow: 1; flex-wrap: wrap">
+                            <div>
+                                <div class="profile-name-label profile-label">
+                                    Name
+                                </div>
+
+                                <div class="profile-name-info profile-info">
+                                    Nathan Pesch
+                                </div>
+                            </div>
+                            <div>
+                                <div class="profile-birthday-label profile-label">
+                                    Birthday
+                                </div>
+
+                                <div class="profile-birthday-info profile-info">
+                                    13/07/2000
+                                </div>
+                            </div>
+                            <div>
+                                <div class="profile-location-label profile-label">
+                                    Location
+                                </div>
+
+                                <div class="profile-location-info profile-info">
+                                    Lennik, Belgium
+                                </div>
+                            </div>
+                            <div>
+                                <div class="profile-email-label profile-label">
+                                    E-mail
+                                </div>
+
+                                <div class="profile-email-info profile-info"
+                                    style="flex-wrap:nowrap; overflow-wrap: break-word;">
+                                    nathan.pesch@telenet.be
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
 
                 </div>
+                <div
+                    style="display: flex; flex-direction: column; justify-content: start; flex-grow: 2; font-size: 1.8vmax;">
+                    <div class="aboutme-info" style=" background-color: rgb(205, 221, 235);">
+                        About me
+                    </div>
+                    <div class="aboutme-info" style="overflow-wrap: break-word;">
+                        Creative software engineering student with a passion for game development.<br>
+                        I love computers,
+                        programming, video games, music production and digital art.
+                        IRL, I snowboard and love going on trips.
+                    </div>
+                </div>
+            </div>
 
-            </div>
         </div>
-        <div style="margin-top: -2%">
-            <div class="aboutme-info" style=" font-size:1.5vw; background-color: rgb(205, 221, 235);">
-                About me
-            </div>
-            <div class="aboutme-info" style="">
-                Creative software engineering student with a passion for game development.<br>
-                I love computers,
-                programming, video games, music production and digital art.
-                IRL, I snowboard and love going on trips.
-            </div>
-        </div>
+
     </div>
     <div class="window draggable " id="education-window" style="display:none">
-        <div class=topbar>
-            <img src="cross-icon.png" class="education-button">
-            <div class="text">
+        <div class="topbar">
+            <div class="cross-title">
+                <img src="cross-icon.png" class="education-button">
+            </div>
+
+            <div class="window-title">
                 Education
             </div>
+
         </div>
         <div class="education">
             <ul>
@@ -502,8 +473,11 @@
     </div>
     <div class="window draggable " id="skills-window" style="display:none">
         <div class=topbar>
-            <img src="cross-icon.png" class="skills-button">
-            <div class="text">
+            <div class="cross-title">
+                <img src="cross-icon.png" class="skills-button">
+            </div>
+
+            <div class="window-title">
                 Skills
             </div>
         </div>
