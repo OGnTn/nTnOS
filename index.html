@@ -81,19 +81,20 @@
         height: 100vh;
         margin: 25px 25px;
         */
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-        grid-gap: 1rem;
-        flex-direction: column;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        grid-gap: 3vmin;
+        justify-content: center;
         align-content: space-between;
         flex-wrap: wrap;
-
+        margin-top: 10%;
     }
 
     .desktop-icon-container {
-        margin: 25px;
-        width: 10vh;
-        height: 10vh;
+        margin: 5px;
+        width: 13vmax;
+        height: 13vmax;
         border-radius: 5px;
         background-color: bisque;
         /*
@@ -109,7 +110,7 @@
     .item-text {
         margin-top: 0;
 
-        font-size: 1.8vh;
+        font-size: 1.0vmax;
 
         width: 100%;
         text-align: center;
@@ -346,10 +347,62 @@
                     </div>
                 </div>
                 <div class="desktop-icon-container skills-button">
-                    <img class="logo icon-image" src="GitHub-logo.png">
+                    <ion-icon name="brush-outline"
+                        style=" width: 60%; height: 60%; font-size:110px; object-fit: contain; margin-left: 15%;">
+                    </ion-icon>
                     <div class="icontext">
                         <p class="item-text">
                             Skills
+                        </p>
+                    </div>
+                </div>
+                <div class="desktop-icon-container skills-button">
+                    <ion-icon name="brush-outline"
+                        style=" width: 60%; height: 60%; font-size:110px; object-fit: contain; margin-left: 15%;">
+                    </ion-icon>
+                    <div class="icontext">
+                        <p class="item-text">
+                            BarTinder
+                        </p>
+                    </div>
+                </div>
+                <div class="desktop-icon-container skills-button">
+                    <ion-icon name="brush-outline"
+                        style=" width: 60%; height: 60%; font-size:110px; object-fit: contain; margin-left: 15%;">
+                    </ion-icon>
+                    <div class="icontext">
+                        <p class="item-text">
+                            ClimaSim
+                        </p>
+                    </div>
+                </div>
+                <div class="desktop-icon-container skills-button">
+                    <ion-icon name="brush-outline"
+                        style=" width: 60%; height: 60%; font-size:110px; object-fit: contain; margin-left: 15%;">
+                    </ion-icon>
+                    <div class="icontext">
+                        <p class="item-text">
+                            Grids
+                        </p>
+                    </div>
+                </div>
+                <div class="desktop-icon-container skills-button">
+                    <ion-icon name="brush-outline"
+                        style=" width: 60%; height: 60%; font-size:110px; object-fit: contain; margin-left: 15%;">
+                    </ion-icon>
+                    <div class="icontext">
+                        <p class="item-text">
+                            Cherno
+                        </p>
+                    </div>
+                </div>
+                <div class="desktop-icon-container skills-button">
+                    <ion-icon name="brush-outline"
+                        style=" width: 60%; height: 60%; font-size:110px; object-fit: contain; margin-left: 15%;">
+                    </ion-icon>
+                    <div class="icontext">
+                        <p class="item-text">
+                            Hallow Halls
                         </p>
                     </div>
                 </div>
@@ -449,7 +502,7 @@
             </div>
 
         </div>
-        <div class="education">
+        <div class="education" style="height:100%; font-size: 2.1vmax;">
             <ul>
                 <li>
                     Bachelor's Degree, Free University Of Brussels
@@ -484,8 +537,8 @@
         <div class="skills">
             <div class="profile-info-row">
                 <div class="profile-info-column">
-                    <div class="skill-labels">Coding Languages</div>
-                    <ul class="skill-list">
+                    <div class="skill-labels" style="font-size: 2.1vmax;">Coding Languages</div>
+                    <ul class="skill-list" style="font-size: 1.8vmax">
                         <li>
                             C#
                         </li>
@@ -513,8 +566,8 @@
                     </ul>
                 </div>
                 <div class="profile-info-column">
-                    <div class="skill-labels">Specific Skills</div>
-                    <ul class="skill-list">
+                    <div class="skill-labels" style="font-size: 2.1vmax;">Specific Skills</div>
+                    <ul class=" skill-list" style="font-size: 1.7vmax; overflow-wrap: break-word;">
                         <li>
                             Network Programming
                         </li>
