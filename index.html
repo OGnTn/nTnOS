@@ -317,6 +317,14 @@
         opacity: 1;
     }
 
+    .music-window {
+        height: 50vh;
+    }
+
+    iframe {
+        volume: silent;
+    }
+
     #time {
         text-align: right;
     }
@@ -332,7 +340,18 @@
 <script type="text/javascript">
 
 
-
+    $("#hide").click(function () {
+        $("#profile-window").hide()
+    })
+    $("#show").click(function () {
+        $("#profile-window").show()
+    })
+    $(document).ready(function () {
+        $(".profile-button").click(function () {
+            console.log("toggling")
+            $("#profile-window").toggle()
+        })
+    })
 
     $("#hide").click(function () {
         $("#music-window").hide()
@@ -416,6 +435,47 @@
             showSlides(slideIndex, "grids");
         })
     })
+    $("#hide").click(function () {
+        $("#cherno-window").hide()
+    })
+    $("#show").click(function () {
+        $("#cherno-window").show()
+    })
+    $(document).ready(function () {
+        $(".cherno-button").click(function () {
+            console.log("toggling")
+            $("#cherno-window").toggle()
+            let slideIndex = 1;
+            showSlides(slideIndex, "cherno");
+        })
+    })
+
+    function closeIFrame() {
+        $('#webplayer').remove();
+    }
+
+    $("#hide").click(function () {
+        $("#hallow-window").hide()
+    })
+    $("#show").click(function () {
+        $("#hallow-window").show()
+    })
+    $(document).ready(function () {
+        $(".hallow-button").click(function () {
+            console.log("toggling")
+            $("#hallow-window").toggle()
+            if ($("#hallow-window").is(":hidden")) {
+                closeIFrame();
+            }
+            else {
+                console.log("adding iframe");
+                $("<iframe src='https://ogntn.github.io/HallowHalls/' style='border:0px #000000 none;' name='Hallow Halls' id='webplayer' scrolling='no' frameborder='1' marginheight='px' marginwidth='320px' height='540px' width='100%'></iframe>")
+                    .appendTo(".Hallow")
+            }
+        })
+    })
+
+
 
     let slideIndex = 1;
     showSlides(slideIndex, "bartinder");
@@ -451,19 +511,9 @@
     }
 
 
-    function showMusicWindow() {
 
-        var music = document.getElementById("music-window");
-        console.log("calling func");
-        if (window.getComputedStyle(music).display === "block") {
-            music.style.display === "none";
-            console.log("no")
-        }
-        else {
-            console.log("yes")
-            window.getComputedStyle(music).display === "block";
-        }
-    }
+
+
 </script>
 
 
@@ -504,7 +554,7 @@
         <div class="desktop">
 
             <div class="icon-blocks flexbox-container">
-                <div class="desktop-icon-container music-button">
+                <div class="desktop-icon-container profile-button">
                     <div style="">
                         <img class="logo icon-image" src="profile_icon.png"
                             style="width: 50%; height: 50%; border-radius: 20%; object-fit: contain; display:flex; justify-content: center; border: 0.7vmax solid #000000;">
@@ -572,12 +622,21 @@
                         </p>
                     </div>
                 </div>
-                <div class="desktop-icon-container skills-button">
+                <div class="desktop-icon-container hallow-button">
                     <img class="logo icon-image" src="hallowhalls_logo.png"
                         style="width: 50%; height: auto; border-radius: 20%; object-fit: contain; display:flex; justify-content: center;  border: 0.7vmax solid #000000;">
                     <div class="icontext">
                         <p class="item-text">
                             Hallow Halls
+                        </p>
+                    </div>
+                </div>
+                <div class="desktop-icon-container music-button">
+                    <img class="logo icon-image" src="hallowhalls_logo.png"
+                        style="width: 50%; height: auto; border-radius: 20%; object-fit: contain; display:flex; justify-content: center;  border: 0.7vmax solid #000000;">
+                    <div class="icontext">
+                        <p class="item-text">
+                            Music
                         </p>
                     </div>
                 </div>
@@ -587,11 +646,11 @@
         </div>
 
     </div>
-    <div class="window draggable " id="music-window" style="display:none">
+    <div class="window draggable " id="profile-window" style="display:none">
         <div style="width: 100; height: 100%;">
             <div class=topbar>
                 <div class="cross-title">
-                    <img src="cross-icon.png" class="music-button">
+                    <img src="cross-icon.png" class="profile-button">
                 </div>
                 <div class="window-title">
                     Profile
@@ -888,6 +947,89 @@
                     Page</a>
 
             </div>
+        </div>
+
+    </div>
+    <div class="window draggable" id="cherno-window" style="display:none">
+        <div class=topbar>
+            <div class="cross-title">
+                <img src="cross-icon.png" class="cherno-button">
+            </div>
+
+            <div class="window-title">
+                Chernobog
+            </div>
+        </div>
+        <div class="Chernobog">
+            <div class="slideshow-container">
+
+                <!-- Full-width images with number text -->
+                <div class="cherno-slides mySlides">
+                    <div class="numbertext">1 / 2</div>
+                    <img src="chernobog-image1.png" style="width:100%">
+                </div>
+
+                <div class="cherno-slides mySlides">
+                    <div class="numbertext">2 / 2</div>
+                    <img src="chernobog-image2.png" style="width:100%">
+                </div>
+                <div class="cherno-slides mySlides">
+                    <div class="numbertext">2 / 2</div>
+                    <img src="chernobog-image3.png" style="width:100%">
+                </div>
+
+                <!-- Next and previous buttons -->
+                <a class="prev" onclick="plusSlides(-1, 'cherno')" }>&#10094;</a>
+                <a class="next" onclick="plusSlides(1, 'cherno')" }>&#10095;</a>
+
+            </div>
+
+            <div style="font-size: 2vmax;">
+                Multiplayer 3D retro horror game inspired by Slenderman and Silent Hill.
+            </div>
+        </div>
+
+    </div>
+    <div class="window draggable music-window" id="music-window" style="display:none">
+        <div class=topbar>
+            <div class="cross-title">
+                <img src="cross-icon.png" class="music-button">
+            </div>
+
+            <div class="window-title">
+                Music
+            </div>
+        </div>
+        <div class="Music">
+            <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay"
+                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1438159600&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+            <div
+                style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
+                <a href="https://soundcloud.com/drathan" title="Drathan" target="_blank"
+                    style="color: #cccccc; text-decoration: none;">Drathan</a> · <a
+                    href="https://soundcloud.com/drathan/sets/discography" title="Discography" target="_blank"
+                    style="color: #cccccc; text-decoration: none;">Discography</a>
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <div class="window draggable" id="hallow-window" style="display:none">
+        <div class=topbar>
+            <div class="cross-title">
+                <img src="cross-icon.png" class="hallow-button">
+            </div>
+
+            <div class="window-title">
+                Hallow Halls
+            </div>
+        </div>
+        <div class="Hallow" id="Hallow" style="display:block; height: 100%">
+
+
+
         </div>
 
     </div>
